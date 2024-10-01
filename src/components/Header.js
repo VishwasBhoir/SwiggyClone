@@ -1,8 +1,14 @@
 import logo from "./../../assets/VishFoodLogo.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	const [isLogin, setIsLogin] = useState(false);
+	const [myName, setMyName] = useState("vishwas");
+
+	useEffect(() => {
+		console.log("useEffect in header");
+	}, [isLogin, myName]);
 
 	const toggleLogin = () => {
 		setIsLogin(!isLogin);
@@ -18,13 +24,13 @@ const Header = () => {
 			<div className="nav-items">
 				<ul>
 					<li>
-						<a href="#">Home</a>
+						<Link to="/">Home</Link>
 					</li>
 					<li>
-						<a href="#">About</a>
+						<Link to="/about">About</Link>
 					</li>
 					<li>
-						<a href="#">Contact</a>
+						<Link to="/contact">Contact</Link>
 					</li>
 					<li>
 						<a href="#">Cart</a>
