@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
 	const [isLogin, setIsLogin] = useState(false);
-	const [myName, setMyName] = useState("vishwas");
 
 	useEffect(() => {
-		console.log("useEffect in header");
-	}, [isLogin, myName]);
+		// console.log("useEffect in header");
+	}, [isLogin]);
 
 	const toggleLogin = () => {
 		setIsLogin(!isLogin);
